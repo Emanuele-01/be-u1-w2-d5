@@ -21,5 +21,12 @@ public class riviste extends carta{
 		return periodicità;
 	}
 	
-
+	@Override
+    public String toString() {
+        return "Rivista{" +
+                "title: '" + title + "'" +
+                ", year: " + yearProduction + 
+                ", periodicità: " + periodicità +
+                '}';
+    }
 }

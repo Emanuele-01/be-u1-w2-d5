@@ -58,7 +58,40 @@ public class library {
 		
 // aggiunta libro
 		addLibro(libro1);
+		addLibro(libro2);
+		addLibro(libro3);
+		addLibro(libro4);
+		addLibro(libro5);
+		addLibro(libro6);
+		addLibro(libro7);
+		addLibro(libro8);
+		addLibro(libro9);
+		addLibro(libro10);
+		
+// aggiunta riviste
+		
+		addRivista(rivista1);
+		addRivista(rivista2);
+		addRivista(rivista3);
+		addRivista(rivista4);
+		addRivista(rivista5);
+		addRivista(rivista6);
+		addRivista(rivista7);
+		
+		
 		logger.info("questa è la attuale libreria: " + library);
+		
+// ricerca IBSN
+		
+		searchIBSN("9788408147631");
+		
+// ricerca anno di publicazione
+		
+		searchYearPublication("2022");
+		
+// ricerca per autore
+		
+		searchAutore("Umberto Eco");
 	}
 	
 // metodo per aggiungere libro e riviste
@@ -82,9 +115,26 @@ public class library {
 // ricerca per IBSN
 		
 		public static void searchIBSN(String L1) {
-			List<String> search = library.stream().filter(ibsn -> ibsn.getISBN().equals(L1)).map(carta::getISBN).toList();
-			
+			List<carta> searchIbsn = library.stream()
+					.filter(ibsn -> ibsn.getISBN().equals(L1)).findFirst().stream().toList();
+			logger.info("libro con lo stesso iBSN ricercato: " + searchIbsn.toString());
 		};
-
+// ricerca per anno di pubblicazione
+		
+		public static void searchYearPublication(String Y1) {
+			List<carta> searchYear = library.stream()
+					.filter(year -> year.getYearProduction().equals(Y1)).findFirst().stream().toList();
+			logger.info("libro con lo stesso anno di produzione ricercato: " + searchYear.toString());
+		};
+		
+// ricerca per autore
+		
+		public static void searchAutore(String A1) {
+			List<books> searchAutore = library.stream()
+					.filter(carta -> carta instanceof books).map(carta -> (books)carta)
+					.filter(books -> books.getAutore().equals(A1)).findFirst().stream().toList();
+			logger.info("libro con lo stesso autore ricercato: " + searchAutore.toString());
+		};
+		
 	
 }

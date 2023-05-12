@@ -1,8 +1,8 @@
 package Main1;
 
 public class books extends carta{
-	private String autore;
-	private String genere;
+	protected String autore;
+	protected String genere;
 	
 	public books(String ISBN, String title, String yearProduction, int numPage, String autore, String genere) {
 		super(ISBN, title, yearProduction, numPage);
@@ -30,5 +30,12 @@ public class books extends carta{
 		return genere;
 	}
 	
-	
+	  @Override
+	    public String toString() {
+	        return "Book{" +
+	                "title: '" + title + "'" +
+	                ", author: '" + autore + "'"+
+	                ", year: " + yearProduction +
+	                '}';
+	    }
 }
