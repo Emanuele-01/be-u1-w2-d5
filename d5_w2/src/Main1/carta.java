@@ -1,12 +1,12 @@
 package Main1;
 
-public abstract class materialeCartaceo {
-	protected long ISBN;
+public abstract class carta {
+	protected String ISBN;
 	protected String title;
 	protected String yearProduction;
 	protected int numPage;
 	
-	public materialeCartaceo(long ISBN, String title, String yearProduction, int numPage) {
+	public carta(String ISBN, String title, String yearProduction, int numPage) {
 		this.ISBN = ISBN;
 		this.title = title;
 		this.yearProduction = yearProduction;
@@ -15,7 +15,7 @@ public abstract class materialeCartaceo {
 	
 // setter
 	
-	public void setISBN(long iSBN) {
+	public void setISBN(String iSBN) {
 		 this.ISBN = iSBN;
 	}
 	
@@ -33,7 +33,7 @@ public abstract class materialeCartaceo {
 	
 // getter
 	
-	public long getISBN() {
+	public String getISBN() {
 		return ISBN;
 	}
 	
@@ -48,5 +48,4 @@ public abstract class materialeCartaceo {
 	public String getYearProduction() {
 		return yearProduction;
 	}
-	
 }

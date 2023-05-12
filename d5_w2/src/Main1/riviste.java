@@ -1,23 +1,23 @@
 package Main1;
 
-public class riviste extends materialeCartaceo{
+public class riviste extends carta{
 	
-	private String periodicità;
+	private Main1.periodicità periodicità;
 	
-	public riviste(long ISBN, String title, String yearProduction, int numPage, String periodicità) {
+	public riviste(String ISBN, String title, String yearProduction, int numPage, periodicità periodicità) {
 		super(ISBN, title, yearProduction, numPage);
 		this.periodicità = periodicità;
 	}
 	
 // setter
 	
-	public void setPeriodicità(String periodicità) {
+	public void setPeriodicità(periodicità periodicità) {
 		this.periodicità = periodicità;
 	}
 
 // getter
 	
-	public String getPeriodicità() {
+	public periodicità getPeriodicità() {
 		return periodicità;
 	}
 	

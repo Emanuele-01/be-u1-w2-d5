@@ -1,10 +1,10 @@
 package Main1;
 
-public class books extends materialeCartaceo{
+public class books extends carta{
 	private String autore;
 	private String genere;
 	
-	public books(long ISBN, String title, String yearProduction, int numPage, String autore, String genere) {
+	public books(String ISBN, String title, String yearProduction, int numPage, String autore, String genere) {
 		super(ISBN, title, yearProduction, numPage);
 		this.autore = autore;
 		this.genere = genere;
@@ -29,5 +29,6 @@ public class books extends materialeCartaceo{
 	public String getGenere() {
 		return genere;
 	}
+	
 	
 }
